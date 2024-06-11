@@ -1,0 +1,136 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('multiv.jpg'); /* Replace 'background.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.task-manager {
+    display: flex;
+    gap: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.task-input, .task-list {
+    background:transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.task-input input[type=text], .task-input input[type=date], .task-input select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: calc(100% - 22px);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.task-input button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.task-input button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    background:teal;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list li .buttons {
+    display: flex;
+    align-items: center;
+}
+
+.task-list li button {
+    background: none;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.task-list li button:hover {
+    color: #c9302c;
+}
+
+.task-list li button.complete {
+    color: #5cb85c;
+}
+
+.task-list li .buttons input[type=checkbox] {
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.task-list li .buttons button img {
+    width: 20px;
+    height: 20px;
+}
